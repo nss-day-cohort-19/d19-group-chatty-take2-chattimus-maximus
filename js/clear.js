@@ -4,7 +4,7 @@ var Messenger = (function (object){
 	object.clearAll = function() {
 		var array = [];
 		Messenger.populateMessagePage(array);
-		document.getElementsById("clear-btn").setAttribute("disabled", true);
+		document.getElementById("clear-btn").setAttribute("disabled", true);
 	}
 	return object;
 })(Messenger || {})

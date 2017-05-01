@@ -14,7 +14,7 @@ clickTarget.addEventListener("click", (event) => {
 
 let input = document.getElementById("message");
 input.addEventListener("keyup", (event) => {
-	if (event.keyCode === 13){
+	if (event.keyCode === 13 && input.value !== ""){
 		Messenger.addMessage(input.value);
 		input.value = "";
 	}
@@ -22,8 +22,7 @@ input.addEventListener("keyup", (event) => {
 
 let navListen = document.getElementById("clear-btn");
 navListen.addEventListener("click", (event) => {
-	console.log("You clicked in the navBar");
-	if (event.target.id === "delete-btn"){
+	if (event.target.id === "clear-btn"){
 		console.log("You clicked on the clearAll button");
 		Messenger.clearAll();
 	}
