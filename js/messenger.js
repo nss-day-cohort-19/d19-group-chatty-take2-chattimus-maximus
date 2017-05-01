@@ -17,7 +17,9 @@ var Messenger = (function (taco){
 		document.getElementById("clear-btn").setAttribute("disable", false);
 		var messagesString = "";
 		for(var i; i < messages.length; i++) {
-			messageString += `<div class="message"><p>${messages[i].text}</p><button class="deletebtn" id="msg${i}">Delete</button></div>`;
+
+			messageString += `<div class="message"><p>${messages[i].text}</p><button class="delete" id="msg${i}">Delete</button></div>`;
+
 		}
 		document.getElementById("messagePage").innerHTML = messageString;
 	};
