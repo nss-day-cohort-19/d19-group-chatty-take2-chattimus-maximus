@@ -5,6 +5,7 @@ var Messenger = (function (object){
 		array = [];
 		Messenger.populateMessagePage(array);
 		document.getElementsById("clear-button").setAttribute("disabled", true);
+		return object;
 	}
 })(Messenger || {})
 
