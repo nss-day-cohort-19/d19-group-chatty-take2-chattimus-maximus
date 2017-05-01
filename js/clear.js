@@ -1,8 +1,9 @@
 console.log("clear.js loaded");
 
 var Messenger = (function (object){
-	object.clearAll = function(array) {
-		array = [];
+
+	object.clearAll = function() {
+		var array = [];
 		Messenger.populateMessagePage(array);
 		document.getElementsById("clear-btn").setAttribute("disabled", true);
 	}
