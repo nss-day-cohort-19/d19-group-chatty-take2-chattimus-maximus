@@ -4,15 +4,12 @@ Messenger.loadJson();
 let clickTarget = document.getElementById("messagePage");
 
 clickTarget.addEventListener("click", (event) => {
+	console.log("click event is being heard");
 
 	if (event.target.className === "delete"){
+		console.log("You clicked a delete button");
 		Messenger.deleteMsg(event);
 	}
-
-	if (event.target.id === "delete-btn"){
-		Messenger.clearAll();
-	}
-
 });
 
 let input = document.getElementById("message");
@@ -22,6 +19,15 @@ input.addEventListener("keyup", (event) => {
 		input.value = "";
 	}
 });
+
+let navListen = document.getElementById("clear-btn");
+navListen.addEventListener("click", (event) => {
+	console.log("You clicked in the navBar");
+	if (event.target.id === "delete-btn"){
+		console.log("You clicked on the clearAll button");
+		Messenger.clearAll();
+	}
+})
 
 
 // let makeDark = document.getElementById("makeDark");
