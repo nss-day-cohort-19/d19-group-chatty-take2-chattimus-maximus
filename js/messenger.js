@@ -8,7 +8,7 @@ var Messenger = (function (taco){
 	};
 
 	taco.deleteMessage = function(id) {
-		messages.splice(id, 1);
+		messages = messages.splice(id, 1);
 		Messenger.populateMessagePage(messages);
 	};
 

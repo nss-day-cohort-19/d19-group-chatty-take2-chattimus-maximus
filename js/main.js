@@ -1,3 +1,5 @@
+Messenger.loadJson();
+
 
 let clickTarget = document.getElementById("messagePage");
 
