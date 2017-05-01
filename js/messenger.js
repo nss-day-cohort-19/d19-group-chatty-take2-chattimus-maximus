@@ -15,7 +15,7 @@ var Messenger = (function (taco){
 
 	taco.populateMessagePage = function(array) {
 		messages = array;
-		document.getElementById("clear-btn").setAttribute("disable", false);
+		document.getElementById("clear-btn").disabled = false;
 		var messagesString = "";
 		for(var i = 0; i < messages.length; i++) {
 
