@@ -1,4 +1,4 @@
-
+console.log("loadjson.js")
 
 
 var Messenger = (function(object){
@@ -16,15 +16,16 @@ var Messenger = (function(object){
 		function loadJsonComplete(event){
 			console.log("JSON file has loaded our messages");
 			array = JSON.parse(this.responseText).messages;
+			console.log(array);
 			Messenger.populateMessagePage(array);
 		}
 
 		function loadJsonFailed(event){
 			console.log("JSON file did not load");
 		}
-		newMsgArray.open("GET", "\history.json");
+		newMsgArray.open("GET", "../history.json");
 		newMsgArray.send();
-	}
+	};
 		return object;
 
 
