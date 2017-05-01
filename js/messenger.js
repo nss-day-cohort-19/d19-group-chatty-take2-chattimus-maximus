@@ -18,10 +18,10 @@ var Messenger = (function (taco){
 		var messagesString = "";
 		for(var i; i < messages.length; i++) {
 
-			messageString += `<div class="message"><p>${messages[i].text}</p><button class="delete" id="msg${i}">Delete</button></div>`;
+			messagesString += `<div class="message"><p>${messages[i].text}</p><button class="delete" id="msg${i}">Delete</button></div>`;
 
 		}
-		document.getElementById("messagePage").innerHTML = messageString;
+		document.getElementById("messagePage").innerHTML = messagesString;
 	};
 
 	return taco;
