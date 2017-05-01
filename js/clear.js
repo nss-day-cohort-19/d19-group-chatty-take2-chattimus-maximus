@@ -1,7 +1,6 @@
 console.log("clear.js loaded");
 
 var Messenger = (function (object){
-
 	object.clearAll = function() {
 		var array = [];
 		Messenger.populateMessagePage(array);
