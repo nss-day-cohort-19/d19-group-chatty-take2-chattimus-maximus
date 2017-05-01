@@ -22,7 +22,7 @@ var Messenger = (function(object){
 		function loadJsonFailed(event){
 			console.log("JSON file did not load");
 		}
-		newMsgArray.open("GET", "history.json");
+		newMsgArray.open("GET", "\history.json");
 		newMsgArray.send();
 	}
 		return object;
