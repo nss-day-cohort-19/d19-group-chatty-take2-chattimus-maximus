@@ -1,0 +1,15 @@
+{
+	"messages": [
+		{
+			"text": "Hello World!"
+		},{
+			"text": "Hey NSS!"
+		},{
+			"text": "What's up?"
+		},{
+			"text": "Nothing much just making a messanger app"
+		},{
+			"text": "That's cool"
+		}
+	]
+}
