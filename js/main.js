@@ -3,6 +3,8 @@ Messenger.loadJson();
 
 let clickTarget = document.getElementById("messagePage");
 
+var isEditing = false;
+
 clickTarget.addEventListener("click", (event) => {
 	console.log("click event is being heard");
 
@@ -10,12 +12,22 @@ clickTarget.addEventListener("click", (event) => {
 		console.log("You clicked a delete button");
 		Messenger.deleteMsg(event);
 	}
+	if (event.target.className === "edit"){
+		console.log("You clicked edit button");
+		Messenger.editMsg(event);
+		isEditing = true;
+	}
 });
 
 let input = document.getElementById("message");
 input.addEventListener("keyup", (event) => {
 	if (event.keyCode === 13 && input.value !== ""){
-		Messenger.addMessage(input.value);
+
+		if(isEditing){
+			Messenger.makeEditReplace();
+		} else {
+			Messenger.addMessage(input.value);
+		}
 		input.value = "";
 	}
 });
