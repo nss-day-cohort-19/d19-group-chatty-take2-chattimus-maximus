@@ -1,15 +1,20 @@
 {
 	"messages": [
 		{
-			"text": "Hello World!"
+			"text": "Hello World!",
+			"time": "9:00"
 		},{
-			"text": "Hey NSS!"
+			"text": "Hey NSS!",
+			"time": "9:02"
 		},{
-			"text": "What's up?"
+			"text": "What's up?",
+			"time": "9:03"
 		},{
-			"text": "Nothing much just making a messanger app"
+			"text": "Nothing much just making a messanger app",
+			"time": "9:07"
 		},{
-			"text": "That's cool"
+			"text": "That's cool",
+			"time": "9:08"
 		}
 	]
 }
