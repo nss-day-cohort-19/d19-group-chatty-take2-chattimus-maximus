@@ -29,4 +29,30 @@ navListen.addEventListener("click", (event) => {
 })
 
 
-// let makeDark = document.getElementById("makeDark");
+let makeDark = document.getElementById("makeDark");
+makeDark.addEventListener("click", () => {
+	let something = document.getElementById("master-wrapper");
+	something.classList.toggle("bg-inverse");
+	something.classList.toggle("text-white");
+});
+
+let makeLarge = document.getElementById("makeLarge");
+makeLarge.addEventListener("click", () => {
+	let something = document.getElementById("master-wrapper");
+	something.classList.toggle("large");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
