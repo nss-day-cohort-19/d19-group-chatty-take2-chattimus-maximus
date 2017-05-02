@@ -56,6 +56,10 @@ submitColorBtn.addEventListener("click", () => {
 	document.getElementById("master-wrapper").style.color = `#${color}`;
 	document.getElementById("master-wrapper").style.background = `#${backgroundColor}`;
 });
+let cancelColorBtn = document.getElementById("cancel");
+cancelColorBtn.addEventListener("click", () => {
+	document.getElementById("colordialog").close();
+})
 
 
 
