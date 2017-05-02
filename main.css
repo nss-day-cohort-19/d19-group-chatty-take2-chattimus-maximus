@@ -11,3 +11,7 @@
 .large {
 	font-size:  2rem;
 }
+#colordialog {
+	background-color: lightblue;
+	z-index: 1000;
+}
