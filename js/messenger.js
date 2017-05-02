@@ -15,17 +15,14 @@ var Messenger = (function (taco){
 
 	taco.addMessage = function (text) {
 		var newMessage = {"text": text};
-		newMessage.name = Messenger.getRadioValue();
+		var date = new Date();
+    newMessage.name = Messenger.getRadioValue();
+		newMessage.time = date.getHours()+":"+date.getMinutes();
 		messages.push(newMessage);
 		Messenger.populateMessagePage(messages);
 	};
-	// taco.addMessage = function (text) {
-	// 	var newMessage = {"text": text};
-	// 	messages.push(newMessage);
-	// 	Messenger.populateMessagePage(messages);
-	// };
-
-	taco.deleteMessage = function(id) {
+	
+  taco.deleteMessage = function(id) {
 		messages.splice(id, 1);
 		Messenger.populateMessagePage(messages);
 	};
@@ -34,10 +31,13 @@ var Messenger = (function (taco){
 		messages = array;
 		document.getElementById("clear-btn").disabled = false;
 		var messagesString = "";
-		for(var i = 0; i < messages.length; i++) {
-
-			messagesString += `<div class="message"><p><strong>${messages[i].name}</strong>: ${messages[i].text}</p><button class="delete" id="msg${i}">Delete</button></div>`;
-
+		var limiter = 0;
+		for(var i = (messages.length - 1); i>=0; i--) {
+			messagesString += `<div class="message"><p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p><button class="delete" id="msg${i}">Delete</button></div>`;
+			limiter += 1;
+			if (limiter === 20) {
+				break;
+			}
 		}
 		document.getElementById("messagePage").innerHTML = messagesString;
 	};
