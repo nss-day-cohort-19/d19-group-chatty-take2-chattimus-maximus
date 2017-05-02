@@ -1,6 +1,8 @@
 console.log("messenger.js");
 var Messenger = (function (taco){
 	var messages = [];
+	var editedMsg;
+
 
 	taco.getRadioValue = () => {
 		let group = document.getElementsByClassName("nameRadios");
@@ -12,7 +14,6 @@ var Messenger = (function (taco){
 			};
 		};
 	};
-
 	taco.addMessage = function (text) {
 		var newMessage = {"text": text};
 		var date = new Date();
@@ -27,13 +28,32 @@ var Messenger = (function (taco){
 		Messenger.populateMessagePage(messages);
 	};
 
+	taco.editMessage = function(id) {
+		var input = document.getElementById('message');
+		input.focus();
+		input.value = messages[id].text;
+		editedMsg = id;
+	};
+
+
+
+	taco.makeEditReplace = function(){
+		console.log(messages[editedMsg]);
+		var input = document.getElementById('message');
+		messages[editedMsg].text = input.value;
+		Messenger.populateMessagePage(messages);
+
+	}
+
+
+
 	taco.populateMessagePage = function(array) {
 		messages = array;
 		document.getElementById("clear-btn").disabled = false;
 		var messagesString = "";
 		var limiter = 0;
 		for(var i = (messages.length - 1); i>=0; i--) {
-			messagesString += `<div class="message"><p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p><button class="delete" id="msg${i}">Delete</button></div>`;
+			messagesString += `<div id="msg${i}" class="message"><p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p><button class="delete" id="delete${i}">Delete</button><button id="edit${i}" class="edit">Edit</button></div>`;
 			limiter += 1;
 			if (limiter === 20) {
 				break;
