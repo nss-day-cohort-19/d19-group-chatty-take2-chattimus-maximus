@@ -1,5 +1,18 @@
 Messenger.loadJson();
 
+let users = {
+  names: ["Javier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
+};
+
+let makeRadio = (object) => {
+	let writeTo = document.getElementById("navArea");
+	for (var i = 0; i < object.names.length; i++){
+		let radios = `<br><input type="radio" name="radio" class="nameRadios" id="radio--${i}" value="${object.names[i]}"> ${object.names[i]}
+					 `;
+		writeTo.innerHTML += radios;
+	}
+};
+makeRadio(users);
 
 let clickTarget = document.getElementById("messagePage");
 
@@ -28,7 +41,6 @@ navListen.addEventListener("click", (event) => {
 	}
 });
 
-
 let makeDark = document.getElementById("makeDark");
 makeDark.addEventListener("click", () => {
 	let something = document.getElementById("master-wrapper");
@@ -47,6 +59,7 @@ changeColor.addEventListener("click", () => {
 		console.log("hiya");
 		document.getElementById("colordialog").show();
 });
+
 let submitColorBtn = document.getElementById("colorpickedbtn");
 submitColorBtn.addEventListener("click", () => {
 	console.log("clicked change color submit");
@@ -56,10 +69,11 @@ submitColorBtn.addEventListener("click", () => {
 	document.getElementById("master-wrapper").style.color = `#${color}`;
 	document.getElementById("master-wrapper").style.background = `#${backgroundColor}`;
 });
+
 let cancelColorBtn = document.getElementById("cancel");
 cancelColorBtn.addEventListener("click", () => {
 	document.getElementById("colordialog").close();
-})
+});
 
 
 
