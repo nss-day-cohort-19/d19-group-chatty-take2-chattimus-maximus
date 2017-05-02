@@ -4,6 +4,8 @@ var Messenger = (function (taco){
 
 	taco.addMessage = function (text) {
 		var newMessage = {"text": text};
+		var date = new Date();
+		newMessage.time = date.getHours()+":"+date.getMinutes();
 		messages.push(newMessage);
 		Messenger.populateMessagePage(messages);
 	};
@@ -17,10 +19,14 @@ var Messenger = (function (taco){
 		messages = array;
 		document.getElementById("clear-btn").disabled = false;
 		var messagesString = "";
-		for(var i = 0; i < messages.length; i++) {
+		var limiter = 0;
+		for(var i = (messages.length - 1); i>=0; i--) {
 
-			messagesString += `<div class="message"><p>${messages[i].text}</p><button class="delete" id="msg${i}">Delete</button></div>`;
-
+			messagesString += `<div class="message"><p>${messages[i].text} ${messages[i].time}</p><button class="delete" id="msg${i}">Delete</button></div>`;
+			limiter += 1;
+			if (limiter === 20) {
+				break;
+			}
 		}
 		document.getElementById("messagePage").innerHTML = messagesString;
 	};
