@@ -7,7 +7,7 @@ let users = {
 let makeRadio = (object) => {
 	let writeTo = document.getElementById("navArea");
 	for (var i = 0; i < object.names.length; i++){
-		let radios = `<br><input type="radio" name="radio" class="nameRadios" id="radio--${i}" value="${object.names[i]}"> ${object.names[i]}
+		let radios = `<input type="radio" name="radio" class="nameRadios" id="radio--${i}" value="${object.names[i]}"> ${object.names[i]}
 					 `;
 		writeTo.innerHTML += radios;
 	}

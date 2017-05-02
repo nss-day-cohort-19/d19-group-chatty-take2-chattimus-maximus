@@ -21,7 +21,7 @@ var Messenger = (function (taco){
 		messages.push(newMessage);
 		Messenger.populateMessagePage(messages);
 	};
-	
+
   taco.deleteMessage = function(id) {
 		messages.splice(id, 1);
 		Messenger.populateMessagePage(messages);
@@ -33,7 +33,7 @@ var Messenger = (function (taco){
 		var messagesString = "";
 		var limiter = 0;
 		for(var i = (messages.length - 1); i>=0; i--) {
-			messagesString += `<div class="message"><p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p><button class="delete" id="msg${i}">Delete</button></div>`;
+			messagesString += `<div class="message"><p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p><button class="delete" id="msg${i}"> X </button></div>`;
 			limiter += 1;
 			if (limiter === 20) {
 				break;
