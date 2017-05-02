@@ -1,5 +1,18 @@
 Messenger.loadJson();
 
+let users = {
+  names: ["Javier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
+};
+
+let makeRadio = (object) => {
+	let writeTo = document.getElementById("navArea");
+	for (var i = 0; i < object.names.length; i++){
+		let radios = `<br><input type="radio" name="radio" class="nameRadios" id="radio--${i}" value="${object.names[i]}"> ${object.names[i]}
+					 `;
+		writeTo.innerHTML += radios;
+	}
+};
+makeRadio(users);
 
 let clickTarget = document.getElementById("messagePage");
 
@@ -44,7 +57,7 @@ makeLarge.addEventListener("click", () => {
 
 
 
-
+// <div id="radioBtns"></div>
 
 
 

@@ -1,14 +1,19 @@
 {
 	"messages": [
 		{
+			"name": "Javier",
 			"text": "Hello World!"
 		},{
+			"name": "Joanna",
 			"text": "Hey NSS!"
 		},{
+			"name": "Gunter",
 			"text": "What's up?"
 		},{
+			"name": "Gunter",
 			"text": "Nothing much just making a messanger app"
 		},{
+			"name": "Gunter",
 			"text": "That's cool"
 		}
 	]
