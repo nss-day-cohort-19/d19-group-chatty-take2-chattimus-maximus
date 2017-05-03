@@ -1,7 +1,9 @@
 {
-	"messages": {
-			"name": "Gunter",
-			"text": "Nothing much just making a messanger app before the fight",
-	        "time": "9:07"
+	"messages": [
+		{
+		"name": "Vetruvius",
+		"text": "Nothing much just making a messanger app before the fight",
+        "time": "111002021"
 		}
+	]
 }

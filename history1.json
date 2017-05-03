@@ -1,7 +1,9 @@
 {
-	"messages": {
-			"name": "Marcus",
-			"text": "Hey NSS!",
-			"time": "9:02"
+	"messages": [
+		{
+		"name": "Marcus",
+		"text": "Hey NSS!",
+		"time": "909815904"
 		}
+	]
 }
