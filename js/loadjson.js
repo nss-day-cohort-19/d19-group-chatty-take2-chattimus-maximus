@@ -1,11 +1,7 @@
-console.log("loadjson.js")
-
-
 var Messenger = (function(object){
 	var array = [];
 
 	object.loadJson = function(){
-
 
 		var newMsgArray = new XMLHttpRequest();
 
@@ -14,10 +10,11 @@ var Messenger = (function(object){
 		newMsgArray.addEventListener("error", loadJsonFailed);
 
 		function loadJsonComplete(event){
-			console.log("JSON file has loaded our messages");
 			array = JSON.parse(this.responseText).messages;
-			console.log(array);
-			Messenger.populateMessagePage(array);
+			for(x in array) {
+				array[x].time = new Date(Number(array[x].time));
+				Messenger.addMessage(array[x]);
+			}
 		}
 
 		function loadJsonFailed(event){
@@ -26,8 +23,7 @@ var Messenger = (function(object){
 		newMsgArray.open("GET", "../history.json");
 		newMsgArray.send();
 	};
-		return object;
-
+	return object;
 
 })(Messenger || {});
 

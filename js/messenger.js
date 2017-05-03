@@ -1,26 +1,26 @@
-console.log("messenger.js");
 var Messenger = (function (taco){
 	var messages = [];
 	var editedMsg;
 
+	taco.addMessage = function (message) {
+		if(message.time == null) {
+			message.time = Date.now;
+		}
+		if(message.name == undefined) {
+			message.name = "anonymus";
+		}
+		messages.push(message);
+		Messenger.populateMessagePage();
+	};
 
-	taco.getRadioValue = () => {
+	taco.findName = () => {
 		let group = document.getElementsByClassName("nameRadios");
-		console.log("getRadioValue is firing");
 		for (var i = 0; i < group.length; i++){
 			if (group[i].checked){
-				console.log(group[i].value, " is checked");
 				return group[i].value;
-			};
-		};
-	};
-	taco.addMessage = function (text) {
-		var newMessage = {"text": text};
-		var date = new Date();
-    newMessage.name = Messenger.getRadioValue();
-		newMessage.time = date.getHours()+":"+date.getMinutes();
-		messages.push(newMessage);
-		Messenger.populateMessagePage(messages);
+			}
+		}
+		return "Anonymus";
 	};
 
   taco.deleteMessage = function(id) {
@@ -35,28 +35,28 @@ var Messenger = (function (taco){
 		editedMsg = id;
 	};
 
-
-
 	taco.makeEditReplace = function(){
-		console.log(messages[editedMsg]);
 		var input = document.getElementById('message');
 		messages[editedMsg].text = input.value;
-		Messenger.populateMessagePage(messages);
+		messages[editedMsg].name = Messenger.findName();
+		Messenger.populateMessagePage();
+	};
 
-	}
+	taco.clearAll = function() {
+		messages = [];
+		Messenger.populateMessagePage();
+		document.getElementById("clear-btn").setAttribute("disabled", true);
+	};
 
-
-
-	taco.populateMessagePage = function(array) {
-		messages = array;
+	taco.populateMessagePage = function() {
 		document.getElementById("clear-btn").disabled = false;
 		var messagesString = "";
 		var limiter = 0;
 		for(var i = (messages.length - 1); i>=0; i--) {
-
+			var funTime = Messenger.convertTime(messages[i].time);
 			messagesString += 	`<div id="msg${i}" class="message row">
 									<div class="col-10">
-										<p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p>
+										<p><strong>${messages[i].name}</strong>: ${messages[i].text} ${funTime}</p>
 									</div>
 									<div class="col-1">
 										<button class="delete material-icons" id="delete${i}">&#xe5cd;</button>
@@ -65,7 +65,6 @@ var Messenger = (function (taco){
 										<button id="edit${i}" class="edit material-icons">&#xe22b;</button>
 									</div>
 								</div>`;
-
 			limiter += 1;
 			if (limiter === 20) {
 				break;
