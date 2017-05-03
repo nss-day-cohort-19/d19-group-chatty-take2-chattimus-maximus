@@ -61,14 +61,7 @@ button i {
 	justify-content: center;
 	margin-top: 5px;
 }
-.delete {
-	background-color: red;
-	color: white;
-}
-.edit {
-	background-color: green;
-	color: white;
-}
+
 
 #main-footer {
 	text-align: center;
@@ -104,7 +97,16 @@ h1 {
 	margin-top: 15px;
 }
 
-.darkness {
+.darkness * {
 	background-color: grey;
 	color: white;
 }
+.delete {
+	background-color: red;
+	color: white;
+}
+.edit {
+	background-color: green;
+	color: white;
+}
+
