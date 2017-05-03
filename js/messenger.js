@@ -16,12 +16,12 @@ var Messenger = (function (taco){
 	taco.addMessage = function (text) {
 		var newMessage = {"text": text};
 		var date = new Date();
-    newMessage.name = Messenger.getRadioValue();
+    	newMessage.name = Messenger.getRadioValue();
 		newMessage.time = date.getHours()+":"+date.getMinutes();
 		messages.push(newMessage);
 		Messenger.populateMessagePage(messages);
 	};
-	
+
   taco.deleteMessage = function(id) {
 		messages.splice(id, 1);
 		Messenger.populateMessagePage(messages);
