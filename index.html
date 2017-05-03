@@ -4,23 +4,27 @@
 	<meta charset="utf-8">
 	<title>Chattimus Maximus</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"x>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Metamorphous" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
 <body>
 	<div class="container-fluid" id="master-wrapper">
 		<header class="container-fluid" id="header">
-			<h2 id="logo">Time &ne; Productivity</h2>
+			<h1>Chattimus</h1>
+			<br>
+			<img src="Chattimus-Logo.jpg" alt="Chattimus Logo" id="logo">
 			<nav id="navArea">
 				<input type="text" id="message">
 				<button id="clear-btn" value="">Clear</button>
 				<br><input type="checkbox" id="makeDark" value=""> Dark
 				<input type="checkbox" id="makeLarge" value=""> Large
-				<button id="colorpicker">Change Color</button>
+				<button id="colorpicker">Change Color</button><br>
 				<dialog id="colordialog">
 				    <p>
 				        Text Color:
-				        <input name="color1" id="color_value2" class="jscolor" value="99cc00">
+				        <input name="color1" id="color_value2" class="jscolor" value="000000">
 				    </p>
 				    <p>
 				        Background Color:
@@ -35,7 +39,7 @@
 
 		</div>
 	</div>
-	<div class="conatiner-fluid" id="main-footer">
+	<div id="main-footer">
 		<p>Copyright &copy; Chattimus Maximus</p>
 	</div>
 
@@ -46,7 +50,6 @@
 
 <script type="text/javascript" src="js/messenger.js"></script>
 <script type="text/javascript" src="js/loadjson.js"></script>
-<script type="text/javascript" src="js/clear.js"></script>
 <script type="text/javascript" src="js/delete.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>

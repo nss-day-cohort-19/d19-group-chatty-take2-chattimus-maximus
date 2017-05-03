@@ -1,10 +1,8 @@
-console.log("loadjson.js")
-
-
 var Messenger = (function(object){
 	var array = [];
 
 	object.loadJson = function(){
+
 
 		// let newMsg = new XMLHttpRequest();
 
@@ -26,11 +24,21 @@ var Messenger = (function(object){
 		// 	newMsg.send();
 		// }
 
+
 		// jsonLoader("../history.json");
 		// jsonLoader("../history1.json");
 		// jsonLoader("../history2.json");
 		// jsonLoader("../history4.json");
 		// jsonLoader("../history3.json");
+
+		function loadJsonComplete(event){
+			array = JSON.parse(this.responseText).messages;
+			for(x in array) {
+				array[x].time = new Date(Number(array[x].time));
+				Messenger.addMessage(array[x]);
+			}
+		}
+
 
 
 		// var newMsg1 = new XMLHttpRequest();
@@ -99,8 +107,7 @@ var Messenger = (function(object){
 		// newMsgArray.open("GET", "../history.json");
 		// newMsgArray.send();
 	};
-		return object;
-
+	return object;
 
 })(Messenger || {});
 

@@ -1,7 +1,7 @@
 {
 	"messages": {
 			"name": "Claudius",
-	    	"text": "Hello World!",
-	        "time": "9:00"
+      "text": "Hello World!",
+      "time": "1230000000"
 		}
 }
