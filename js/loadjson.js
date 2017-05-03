@@ -25,10 +25,10 @@ var Messenger = (function(object){
 		}
 
 		jsonLoader("../history.json");
-		// jsonLoader("../history1.json");
-		// jsonLoader("../history2.json");
-		// jsonLoader("../history4.json");
-		// jsonLoader("../history3.json");
+		jsonLoader("../history1.json");
+		jsonLoader("../history2.json");
+		jsonLoader("../history4.json");
+		jsonLoader("../history3.json");
 
 
 	};
