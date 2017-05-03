@@ -6,31 +6,31 @@ var Messenger = (function(object){
 
 	object.loadJson = function(){
 
-		let newMsg = new XMLHttpRequest();
+		// let newMsg = new XMLHttpRequest();
 
-		let jsonLoader = (file) => {
-			newMsg.addEventListener("load", loadJsonComplete);
-			newMsg.addEventListener("error", loadJsonFailed);
+		// let jsonLoader = (file) => {
+		// 	newMsg.addEventListener("load", loadJsonComplete);
+		// 	newMsg.addEventListener("error", loadJsonFailed);
 
-			function loadJsonComplete(event){
-				console.log("JSON file has loaded our messages");
-				array.push = (JSON.parse(this.responseText).messages);
-				console.log(array);
-				Messenger.populateMessagePage(array);
-			}
-			function loadJsonFailed(event){
-				console.log("JSON file did not load");
-			}
+		// 	function loadJsonComplete(event){
+		// 		console.log("JSON file has loaded our messages");
+		// 		array.push = (JSON.parse(this.responseText).messages);
+		// 		console.log(array);
+		// 		Messenger.populateMessagePage(array);
+		// 	}
+		// 	function loadJsonFailed(event){
+		// 		console.log("JSON file did not load");
+		// 	}
 
-			newMsg.open("GET", file);
-			newMsg.send();
-		}
+		// 	newMsg.open("GET", file);
+		// 	newMsg.send();
+		// }
 
-		jsonLoader("../history.json");
-		jsonLoader("../history1.json");
-		jsonLoader("../history2.json");
-		jsonLoader("../history4.json");
-		jsonLoader("../history3.json");
+		// jsonLoader("../history.json");
+		// jsonLoader("../history1.json");
+		// jsonLoader("../history2.json");
+		// jsonLoader("../history4.json");
+		// jsonLoader("../history3.json");
 
 
 		// var newMsg1 = new XMLHttpRequest();
