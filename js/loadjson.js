@@ -11,9 +11,10 @@ var Messenger = (function(object){
 			function loadJsonComplete(event){
 				var messages = JSON.parse(this.responseText);
 				for(x in messages) {
-					console.log("array x", messages[x]);
+					console.log("messages x", messages[x]);
 					messages[x].time = new Date(Number(messages[x].time));
-					Messenger.addMessage(messages[x]);
+					var id = event.target.timeStamp;
+					Messenger.addMessage(messages[x], id);
 				}
 			}
 			function loadJsonFailed(event){
@@ -32,6 +33,13 @@ var Messenger = (function(object){
 
 
 	};
+
+	object.sendJson = (messages) => {
+		var database = firebase.database();
+
+		firebase.database().ref().set({messages});
+	};
+
 	return object;
 
 })(Messenger || {});
