@@ -1,29 +1,7 @@
 {
-	"messages": [
-		{
-			"name": "Javier",
-			"text": "Hello World!",
-      "time": "1230000000"
-		},
-    {
-			"name": "Joanna",
-			"text": "Hey NSS!",
-      "time": "1230000000"
-		},
-    {
-			"name": "Gunter",
-			"text": "What's up?",
-      "time": "1230000000"
-		},
-    {
-			"name": "Gunter",
-			"text": "Nothing much just making a messanger app",
-      "time": "1230000000"
-		},
-    {
-			"name": "Gunter",
-			"text": "That's cool",
+	"messages": {
+			"name": "Claudius",
+      "text": "Hello World!",
       "time": "1230000000"
 		}
-	]
 }
