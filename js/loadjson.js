@@ -1,7 +1,5 @@
 var Messenger = (function(object){
 
-	var array = [];
-
 	object.loadJson = function(){
 
 
@@ -11,11 +9,11 @@ var Messenger = (function(object){
 			newMsg.addEventListener("error", loadJsonFailed);
 
 			function loadJsonComplete(event){
-				array = JSON.parse(this.responseText).messages;
-				for(x in array) {
-					console.log("array x", array[x].time);
-					array[x].time = new Date(Number(array[x].time));
-					Messenger.addMessage(array[x]);
+				var messages = JSON.parse(this.responseText);
+				for(x in messages) {
+					console.log("array x", messages[x]);
+					messages[x].time = new Date(Number(messages[x].time));
+					Messenger.addMessage(messages[x]);
 				}
 			}
 			function loadJsonFailed(event){
@@ -27,10 +25,10 @@ var Messenger = (function(object){
 		}
 
 		jsonLoader("../history.json");
-		jsonLoader("../history1.json");
-		jsonLoader("../history2.json");
-		jsonLoader("../history4.json");
-		jsonLoader("../history3.json");
+		// jsonLoader("../history1.json");
+		// jsonLoader("../history2.json");
+		// jsonLoader("../history4.json");
+		// jsonLoader("../history3.json");
 
 
 	};
