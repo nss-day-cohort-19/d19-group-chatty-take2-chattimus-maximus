@@ -54,7 +54,17 @@ var Messenger = (function (taco){
 		var limiter = 0;
 		for(var i = (messages.length - 1); i>=0; i--) {
 
-			messagesString += `<div id="msg${i}" class="message"><p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p><button class="delete" id="delete${i}">Delete</button><button id="edit${i}" class="edit">Edit</button></div>`;
+			messagesString += 	`<div id="msg${i}" class="message row">
+									<div class="col-10">
+										<p><strong>${messages[i].name}</strong>: ${messages[i].text} ${messages[i].time}</p>
+									</div>
+									<div class="col-1">
+										<button class="delete material-icons" id="delete${i}">&#xe5cd;</button>
+									</div>
+									<div class="col-1">
+										<button id="edit${i}" class="edit material-icons">&#xe22b;</button>
+									</div>
+								</div>`;
 
 			limiter += 1;
 			if (limiter === 20) {

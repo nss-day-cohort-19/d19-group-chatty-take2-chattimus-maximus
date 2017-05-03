@@ -1,7 +1,7 @@
 Messenger.loadJson();
 
 let users = {
-  names: ["Javier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
+  names: ["Ceasar", "Brutus", "Marc Anthony", "Horde of Gauls", "Claudius", "Scipio"]
 };
 
 let makeRadio = (object) => {
@@ -14,21 +14,32 @@ let makeRadio = (object) => {
 };
 makeRadio(users);
 
-let clickTarget = document.getElementById("messagePage");
+let clickTarget = document.getElementById("master-wrapper");
 
 var isEditing = false;
 
 clickTarget.addEventListener("click", (event) => {
-	console.log("click event is being heard");
+	console.log("click event is being heard", event.target);
 
-	if (event.target.className === "delete"){
+	if (event.target.className == "delete material-icons"){
 		console.log("You clicked a delete button");
 		Messenger.deleteMsg(event);
 	}
-	if (event.target.className === "edit"){
+	if (event.target.className == "edit material-icons"){
 		console.log("You clicked edit button");
 		Messenger.editMsg(event);
 		isEditing = true;
+	}
+	if (event.target.id == "makeDark"){
+		console.log("You clicked the darkeness button");
+		let something = document.getElementById("master-wrapper");
+		something.classList.toggle("bg-inverse");
+		something.classList.toggle("text-white");
+		let otherthing = document.getElementsByClassName("message");
+		console.log("otherthing", otherthing);
+		for(let i=0; i<otherthing.length; i++) {
+			otherthing[i].classList.toggle("darkness");
+		}
 	}
 });
 
@@ -53,12 +64,14 @@ navListen.addEventListener("click", (event) => {
 	}
 });
 
-let makeDark = document.getElementById("makeDark");
-makeDark.addEventListener("click", () => {
-	let something = document.getElementById("master-wrapper");
-	something.classList.toggle("bg-inverse");
-	something.classList.toggle("text-white");
-});
+// let makeDark = document.getElementById("makeDark");
+// makeDark.addEventListener("click", () => {
+// 	let something = document.getElementById("master-wrapper");
+// 	something.classList.toggle("bg-inverse");
+// 	something.classList.toggle("text-white");
+// 	let otherthing = document.getElementsByClassName("message");
+// 	otherthing.classList.toggle("darkness");
+// });
 
 let makeLarge = document.getElementById("makeLarge");
 makeLarge.addEventListener("click", () => {
