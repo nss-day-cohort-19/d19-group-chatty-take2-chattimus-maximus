@@ -1,6 +1,7 @@
 var Messenger = (function(taco) {
 	taco.deleteMsg = function(event) {
 		var id = event.target.id;
+		console.log(id);
 		id = id.replace("delete", "");
 		Messenger.deleteMessage(Number(id));
 	};

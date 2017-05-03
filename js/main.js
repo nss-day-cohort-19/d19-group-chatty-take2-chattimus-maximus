@@ -1,33 +1,48 @@
 Messenger.loadJson();
 
 let users = {
-  names: ["Javier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
+  names: ["Ceasar", "Brutus", "Marc Anthony", "Horde of Gauls", "Claudius", "Scipio"]
 };
 
 let makeRadio = (object) => {
 	let writeTo = document.getElementById("navArea");
 	for (var i = 0; i < object.names.length; i++){
+
 		let radios = `<br><input type="radio" name="radio" class="nameRadios" id="radio--${i}" value="${object.names[i]}"> ${object.names[i]}`;
 		writeTo.innerHTML += radios;
 	}
 };
 makeRadio(users);
 
-let clickTarget = document.getElementById("messagePage");
+let clickTarget = document.getElementById("master-wrapper");
 
 var isEditing = false;
 
 clickTarget.addEventListener("click", (event) => {
-	if (event.target.className === "delete"){
+	console.log("click event is being heard", event.target);
+
+	if (event.target.className == "delete material-icons"){
+		console.log("You clicked a delete button");
 		Messenger.deleteMsg(event);
 	}
-	if (event.target.className === "edit"){
-		var id = event.target.id;
+	if (event.target.className == "edit material-icons"){
+		console.log("You clicked edit button");
+    var id = event.target.id;
 		id = id.replace("edit", "");
-
-		Messenger.editMessage(Number(id));
+		Messenger.editMessage(id);
 		isEditing = true;
 	}
+	// if (event.target.id == "makeDark"){
+	// 	console.log("You clicked the darkeness button");
+	// 	let something = document.getElementById("master-wrapper");
+	// 	something.classList.toggle("bg-inverse");
+	// 	something.classList.toggle("text-white");
+	// 	let otherthing = document.getElementByClassName("message");
+	// 	console.log("otherthing", otherthing);
+	// 	for(let i=0; i<otherthing.length; i++) {
+	// 		otherthing[i].classList.toggle("darkness");
+	// 	}
+
 });
 
 let input = document.getElementById("message");
@@ -55,6 +70,17 @@ navListen.addEventListener("click", (event) => {
 	}
 });
 
+let makeDark = document.getElementById("makeDark");
+makeDark.addEventListener("click", () => {
+	let something = document.getElementById("master-wrapper");
+	something.classList.toggle("bg-inverse");
+	something.classList.toggle("text-white");
+	let otherthing = document.getElementById("messagePage");
+	otherthing.classList.toggle("darkness");
+  if(makeDark.checked) {
+		changeColor.setAttribute("disabled", true);
+	}
+});
 
 let makeLarge = document.getElementById("makeLarge");
 makeLarge.addEventListener("click", () => {
@@ -80,23 +106,3 @@ let cancelColorBtn = document.getElementById("cancel");
 cancelColorBtn.addEventListener("click", () => {
 	document.getElementById("colordialog").close();
 });
-
-let makeDark = document.getElementById("makeDark");
-makeDark.addEventListener("click", () => {
-	let something = document.getElementById("master-wrapper");
-	something.classList.toggle("bg-inverse");
-	something.classList.toggle("text-white");
-	changeColor.disabled = false;
-	if(makeDark.checked) {
-		changeColor.setAttribute("disabled", true);
-	}
-});
-
-
-
-
-
-
-
-
-
