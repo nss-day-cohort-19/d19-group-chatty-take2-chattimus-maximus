@@ -77,7 +77,8 @@ makeDark.addEventListener("click", () => {
 	something.classList.toggle("text-white");
 	let otherthing = document.getElementById("messagePage");
 	otherthing.classList.toggle("darkness");
-  if(makeDark.checked) {
+	changeColor.disabled = false;
+  	if(makeDark.checked) {
 		changeColor.setAttribute("disabled", true);
 	}
 });
