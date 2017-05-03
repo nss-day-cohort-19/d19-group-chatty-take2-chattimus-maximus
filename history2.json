@@ -1,7 +1,9 @@
 {
-	"messages": {
-			"name": "Gunter",
-			"text": "What's up?",
-	        "time": "9:03"
+	"messages": [
+		{
+		"name": "Leon the Lion",
+		"text": "What's up?",
+        "time": "9051843590839"
 		}
+	]
 }
