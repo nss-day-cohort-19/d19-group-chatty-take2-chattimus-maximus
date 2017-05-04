@@ -18,20 +18,20 @@ let clickTarget = document.getElementById("master-wrapper");
 
 var isEditing = false;
 
-clickTarget.addEventListener("click", (event) => {
-	console.log("click event is being heard", event.target);
+//clickTarget.addEventListener("click", (event) => {
+	// console.log("click event is being heard", event.target);
 
-	if (event.target.className == "delete material-icons"){
-		console.log("You clicked a delete button");
-		Messenger.deleteMsg(event);
-	}
-	if (event.target.className == "edit material-icons"){
-		console.log("You clicked edit button");
-    var id = event.target.id;
-		id = id.replace("edit", "");
-		Messenger.editMessage(id);
-		isEditing = true;
-	}
+	// if (event.target.className == "delete material-icons"){
+	// 	console.log("You clicked a delete button");
+	// 	//Messenger.deleteMsg(event);
+	// }
+	// if (event.target.className == "edit material-icons"){
+	// 	console.log("You clicked edit button");
+ //    	var id = event.target.id;
+	// 	id = id.replace("edit", "");
+	// 	Messenger.editMessage(id);
+	// 	isEditing = true;
+	// }
 	// if (event.target.id == "makeDark"){
 	// 	console.log("You clicked the darkeness button");
 	// 	let something = document.getElementById("master-wrapper");
@@ -43,32 +43,30 @@ clickTarget.addEventListener("click", (event) => {
 	// 		otherthing[i].classList.toggle("darkness");
 	// 	}
 
-});
+// });
 
 let input = document.getElementById("message");
 input.addEventListener("keyup", (event) => {
 	if (event.keyCode === 13 && input.value !== ""){
-		var i = 0;
-		if(isEditing){
-			Messenger.makeEditReplace();
-			isEditing = false;
-		} else {
+		// if(isEditing){
+		// 	Messenger.makeEditReplace();
+		// 	isEditing = false;
+		// } else {
 			var name = Messenger.findName();
-			var time = new Date();
-			console.log(time.getFullYear());
-			var message = {"text": input.value, name, time};
-			Messenger.addMessage(message);
-		}
+			var time = (new Date()).valueOf();
+			var message = {"text": input.value, "name": name};
+			Messenger.addMessage(message, time);
+		//}
 		input.value = "";
 	}
 });
 
-let navListen = document.getElementById("clear-btn");
-navListen.addEventListener("click", (event) => {
-	if (event.target.id === "clear-btn"){
-		Messenger.clearAll();
-	}
-});
+// let navListen = document.getElementById("clear-btn");
+// navListen.addEventListener("click", (event) => {
+// 	if (event.target.id === "clear-btn"){
+// 		Messenger.clearAll();
+// 	}
+// });
 
 let makeDark = document.getElementById("makeDark");
 makeDark.addEventListener("click", () => {
