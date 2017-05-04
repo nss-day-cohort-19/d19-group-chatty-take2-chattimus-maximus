@@ -45,7 +45,6 @@ var Messenger = (function(object){
 				for(x in input) {
 					messages[x] = input[x];
 				}
-				Messenger.populateMessagePage();
 			}
 			function loadJsonFailed(event){
 				console.log("JSON file did not load");
