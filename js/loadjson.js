@@ -5,9 +5,7 @@ var Messenger = (function(object){
 	object.addMessage = (message, id) => {
 		Messenger.loadJson();
 		messages[id] = message;
-		console.log(messages);
-		Messenger.sendJson(messages);
-		Messenger.populateMessagePage();
+		Messenger.sendJson();
 	}
 	object.populateMessagePage = function() {
 
@@ -68,10 +66,11 @@ var Messenger = (function(object){
 
 	};
 
-	object.sendJson = (messages) => {
+	object.sendJson = () => {
 		var database = firebase.database();
 
 		firebase.database().ref().set({messages});
+		Messenger.populateMessagePage();
 	};
 
 	return object;
