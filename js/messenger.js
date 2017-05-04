@@ -56,7 +56,7 @@ var Messenger = (function (taco){
 			var funTime = Messenger.convertTime(messages[i].time);
 			messagesString += 	`<div id="msg${i}" class="message row">
 									<div class="col-10">
-										<p><strong>${messages[i].name}</strong>: ${messages[i].text} ${funTime}</p>
+										<p><strong>${messages[i].name}</strong>: ${messages[i].text}</p><br><p>${funTime}</p>
 									</div>
 									<div class="col-1">
 										<button class="delete material-icons" id="delete${i}">&#xe5cd;</button>
