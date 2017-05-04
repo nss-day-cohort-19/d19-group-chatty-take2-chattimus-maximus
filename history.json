@@ -1,9 +1,14 @@
 {
-	"messages": [
+	"message1":
 		{
 		"name": "Claudius",
 	    "text": "Hello World!",
       	"time": "1230000000"
+		},
+	"message2":
+		{
+		"name": "Marcus",
+		"text": "Hey NSS!",
+		"time": "909815904"
 		}
-	]
 }
