@@ -45,7 +45,6 @@ var Messenger = (function(object){
 				for(x in input) {
 					messages[x] = input[x];
 				}
-				console.log(messages);
 				Messenger.populateMessagePage();
 			}
 			function loadJsonFailed(event){
@@ -70,8 +69,17 @@ var Messenger = (function(object){
 		var database = firebase.database();
 
 		firebase.database().ref().set({messages});
-		Messenger.populateMessagePage();
 	};
+
+	object.addListener = () => {
+
+		var messagePost = firebase.database().ref('messages/');
+		messagePost.on('value', function(snapshot) {
+  			messages = snapshot.val();
+  			Messenger.populateMessagePage();
+		});
+
+	}
 
 	return object;
 
